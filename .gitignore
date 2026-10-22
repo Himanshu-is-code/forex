@@ -1,0 +1,27 @@
+# Binaries and executables
+*.exe
+*.o
+*.obj
+forex_server
+forex_cli
+forex
+
+# Build directories
+cmake-build-debug/
+build/
+.idea/
+.vscode/
+
+# Node & Frontend
+node_modules/
+frontend/node_modules/
+frontend/dist/
+dist/
+
+# Environment files
+frontend/.env.local
+.env.local
+
+# Logs
+*.log
+transactions.log

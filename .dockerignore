@@ -1,0 +1,8 @@
+.git
+.idea
+cmake-build-debug
+frontend/node_modules
+frontend/dist
+forex.exe
+forex_server.exe
+*.log
