@@ -41,6 +41,9 @@ void setCorsHeaders(httplib::Response& res) {
 }
 
 int main(int argc, char* argv[]) {
+    cout << unitbuf;
+    cerr << unitbuf;
+
     int port = 8080;
     if (const char* envPort = getenv("PORT")) {
         int p = atoi(envPort);
@@ -50,6 +53,8 @@ int main(int argc, char* argv[]) {
         int p = atoi(argv[1]);
         if (p > 0) port = p;
     }
+
+    cout << "Starting Forex Server on port: " << port << "..." << endl;
 
     initMockData();
 
@@ -501,6 +506,10 @@ int main(int argc, char* argv[]) {
     cout << "  Core Engine: C++ BFS Graph, Priority Queues, Observers" << endl;
     cout << "=====================================================" << endl;
 
-    svr.listen("0.0.0.0", port);
+    bool ok = svr.listen("0.0.0.0", port);
+    if (!ok) {
+        cerr << "CRITICAL: Server failed to bind/listen on 0.0.0.0:" << port << endl;
+        return 1;
+    }
     return 0;
 }
