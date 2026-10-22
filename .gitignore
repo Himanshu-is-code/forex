@@ -19,6 +19,9 @@ frontend/dist/
 dist/
 
 # Environment files
+.env
+.env.*
+frontend/.env
 frontend/.env.local
 .env.local
 
